@@ -1,0 +1,6 @@
+effects_tables	3
+effect	icon	priority	icon_negative	category	is_positive_value_good
+tmb_balefire_magics_catapult_rapid_enable	ammo_character.png	30	ammo_character.png	battle	true
+tmb_balefire_magics_catapult_splash_enable	ammo_character.png	30	ammo_character.png	battle	true
+tmb_balefire_magics_casket_projectiles_enable	ammo_character.png	30	ammo_character.png	battle	true
+tmb_balefire_magics_net_of_amyntok_enable	spell_ability.png	30	spell_ability.png	battle	true
