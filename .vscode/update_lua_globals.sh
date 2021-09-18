@@ -1,7 +1,7 @@
 #!/bin/env bash
 
-CONFIG_FILE=".luacheckrc"
-LUA_VENDOR_FILES=".vscode/autocomplete"
+CONFIG_FILE=${LUACHECK_CONFIG:-'../.luacheckrc'}
+LUA_VENDOR_FILES=${VENDOR_PATH:-'../.vscode/autocomplete'}
 
 CUSTOM_VARS=()
 if [[ "${CUSTOM_LUA_GLOBALS}" ]]; then
