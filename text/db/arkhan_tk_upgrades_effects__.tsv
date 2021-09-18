@@ -1,0 +1,16 @@
+Loc PackedFile	1
+key	text	tooltip
+effects_description_tmb_balefire_magics_catapult_rapid_enable	Ability "Barrage of Skulls" for Screaming Skull Catapult units	true
+effects_description_tmb_balefire_magics_catapult_splash_enable	Ability "Balefire Malestrom" for Screaming Skull Catapult units	true
+effects_description_tmb_balefire_magics_casket_projectiles_enable	"Overwhelming" Ammunition (homing projectiles) for Casket of Soul units	true
+effects_description_tmb_balefire_magics_net_of_amyntok_enable	Bound spell: "Net of Amyntok"	true
+effects_description_tmb_balefire_magics_desecration_enable	Enables the ability 'Rituals of Desecration'	true
+effects_description_tmb_balefire_magics_incantation_enable	Enables the ability 'Incantation of Souls'	true
+effects_description_tmb_balefire_magics_legions_enable	Enables the ability 'Unwavering Legions'	true
+effects_description_tmb_balefire_magics_barrage_enable	Enables the ability 'Barrage of Lybaras'	true
+effects_description_tmb_balefire_magics_cav_devastating_charge_enable	Enables the ability 'Devastating Charge'	true
+effects_description_tmb_balefire_magics_archer_hail_of_arrows_enable	"Hail of Ancient Arrows" Ammunition (extra projectiles) for Skeleton Archers	true
+effects_description_tmb_balefire_magics_archer_hail_of_arrows_ror_enable	"Hail of Ancient Arrows" Ammunition (extra projectiles) for Skeleton Archers (RoR)	false
+effects_description_tmb_balefire_magics_archer_withering_arrows_enable	"Withering" Ammunition (poison attacks) for Skeleton Archers	true
+effects_description_tmb_balefire_magics_archer_flaming_arrows_enable	"Flaming" Ammunition (flaming attacks) for Skeleton Archers	true
+effects_description_tmb_balefire_magics_venom_wave_enable	Enables the ability 'Venom Wave'	true

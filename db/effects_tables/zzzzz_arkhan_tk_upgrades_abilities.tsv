@@ -1,0 +1,8 @@
+effects_tables	3
+effect	icon	priority	icon_negative	category	is_positive_value_good
+tmb_balefire_magics_cav_devastating_charge_enable	general_ability.png	1	general_ability.png	battle	true
+tmb_balefire_magics_archer_hail_of_arrows_enable	ammo_character.png	1	ammo_character.png	battle	true
+tmb_balefire_magics_archer_hail_of_arrows_ror_enable	ammo_character.png	0	ammo_character.png	battle	true
+tmb_balefire_magics_archer_withering_arrows_enable	phase_posion.png	1	phase_posion.png	battle	true
+tmb_balefire_magics_archer_flaming_arrows_enable	modifier_icon_flaming.png	1	modifier_icon_flaming.png	battle	true
+tmb_balefire_magics_venom_wave_enable	phase_posion.png	30	phase_posion.png	battle	true
