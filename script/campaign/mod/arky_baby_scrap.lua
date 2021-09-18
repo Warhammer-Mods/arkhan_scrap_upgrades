@@ -62,7 +62,7 @@ local faction_exclusive_upgrade_index = {
 --this defines the interval we check and apply upgrade to AI
 local cooldown = 15
 
-function tomb_king_scrap_upgrades()
+local function tomb_king_scrap_upgrades()
 	out("#### Adding Unit Upgrade Listeners ####");
 	--locks everything at beginning of campaign, this only applies to	player now, we are giving AI free scrap upgrades every now and then
 	core:add_listener(
@@ -143,7 +143,7 @@ function tomb_king_scrap_upgrades()
 						local unit_purchasable_effect_list = unit_interface:get_unit_purchasable_effects();
 						if unit_purchasable_effect_list:num_items() ~=0 then
 							local rand = cm:random_number(unit_purchasable_effect_list:num_items()) -1;
-							effect_interface = unit_purchasable_effect_list:item_at(rand);
+							local effect_interface = unit_purchasable_effect_list:item_at(rand);
 							-- Upgrade the unit
 							if tmb_force:is_armed_citizenry() == false then
 								cm:faction_purchase_unit_effect(context:faction(), unit_interface, effect_interface);
