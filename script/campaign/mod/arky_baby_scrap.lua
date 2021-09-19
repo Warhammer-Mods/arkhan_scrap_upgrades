@@ -1,3 +1,5 @@
+local mod_name = "arkhan_scrap_upgrades";
+
 local All_Upgrades = {
 	"tmb_balefire_magics_ethereal_frostbite_attacks",
 	"tmb_balefire_magics_skeleton_nehekharan_tomb_weapons",
@@ -58,6 +60,7 @@ local faction_exclusive_upgrade_index = {
 	["wh2_dlc09_tmb_exiles_of_nehek"] = "tmb_balefire_magics_khatep_unique"
 };
 
+local locked_upgrades = {};
 
 --this defines the interval we check and apply upgrade to AI
 local cooldown = 15
@@ -75,14 +78,14 @@ local function tomb_king_scrap_upgrades()
 			local faction = context:faction();
 			local faction_key = faction:name();
 
-			if not check_element_in_table(faction_key, Upgrade_locked_properly) then
+			if not check_element_in_table(faction_key, locked_upgrades) then
 				for i = 1, #Upgrade_tech_keys do
 					for j = 1, #Upgrade_techs[Upgrade_tech_keys[i]] do
 						cm:faction_set_unit_purchasable_effect_lock_state(faction, Upgrade_techs[Upgrade_tech_keys[i]][j],
 						Upgrade_techs[Upgrade_tech_keys[i]][j], true);
 					end
 				end
-				table.insert(Upgrade_locked_properly, faction_key);
+				table.insert(locked_upgrades, faction_key);
 			end
 			--lock faction specific upgrades
 			for i = 1, #faction_exclusive_available do
@@ -166,14 +169,14 @@ end
 --------------------------------------------------------------
 cm:add_saving_game_callback(
 	function(context)
-		cm:save_named_value("Upgrade_locked_properly", Upgrade_locked_properly, context);
+		cm:save_named_value(mod_name .. "locked_upgrades", locked_upgrades, context);
 	end
 );
 
 cm:add_loading_game_callback(
 	function(context)
 		if cm:is_new_game() == false then
-			Upgrade_locked_properly = cm:load_named_value("Upgrade_locked_properly", Upgrade_locked_properly, context);
+			locked_upgrades = cm:load_named_value(mod_name .. "locked_upgrades", locked_upgrades, context);
 		end
 	end
 );
