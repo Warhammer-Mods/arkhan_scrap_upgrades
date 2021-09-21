@@ -120,7 +120,9 @@ jobs:
       env:
         cache-name: cache-lua
       with:
-        path: {.install,.lua}
+        path: |
+          .install
+          .lua
         key: ${{ runner.os }}-lua-${{ env.LUA_VERSION }}
         restore-keys: |
           ${{ runner.os }}-lua-
