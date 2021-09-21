@@ -88,12 +88,14 @@ jobs:
         chmod +x .vscode/update_lua_globals.sh
         .vscode/update_lua_globals.sh
         changes="$(git status --porcelain=1 ${VENDOR_PATH} ${LUACHECK_CONFIG})"
+        echo $changes
         if [ -z "${changes}" ]; then
           echo "::set-output name=clean::true"
         else
           while IFS= read -r line; do
             file=$(cut -d" " -f3 <<< ${line})
             echo "::notice file=${file}::File changed: ${line}"
+            git diff ${file}
           done <<< ${changes}
           echo "::set-output name=clean::false"
         fi
