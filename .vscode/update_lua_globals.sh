@@ -1,7 +1,7 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
-CONFIG_FILE=${LUACHECK_CONFIG:-'../.luacheckrc'}
-LUA_VENDOR_FILES=${VENDOR_PATH:-'../.vscode/autocomplete'}
+CONFIG_FILE=${LUACHECK_CONFIG:-'.luacheckrc'}
+LUA_VENDOR_FILES=${VENDOR_PATH:-'.vscode/autocomplete'}
 
 CUSTOM_VARS=()
 if [[ "${CUSTOM_LUA_GLOBALS}" ]]; then
@@ -39,37 +39,30 @@ done
 # set positional arguments in their proper place
 eval set -- "$PARAMS"
 
-# download the "show_globals.lua" script
-curl -sL --fail \
-  https://gistcdn.githack.com/Egor-Skriptunoff/e4ab3bfc777faf4482a1b3f3ae19181b/raw/a39198cf62a52be7956abbff145a7fbf3f9a128a/show_globals.lua \
-> show_globals.lua
-
 # build the list of lua globals exported
 lua_globals=$(
   for f in $(
     find ${LUA_VENDOR_FILES} -type f -iname "*.lua"
   ); do 
-    lua show_globals.lua W < $f | 
-    awk -F"\t" '{printf "\"%s\",\n", $2}'
+    lua .vscode/show_globals.lua W < $f | 
+    awk -F"\t" '{printf "	\"%s\",\n", $2}'
   done
   
   for v in ${CUSTOM_VARS[@]}; do
-    echo "\"${v}\","
+    echo "	\"${v}\","
   done
 )
 
-# remove the script as it's no longer used
-rm -f show_globals.lua
-
 # reformat the list of lua globals
 lua_globals=$(
-  tr ' ' '\n' <<<"${lua_globals}" | 
-  sort -u  | 
-  tr '\n' ' ' | 
-  sed 's/, $//'
+  sort -u <<< "${lua_globals}" | 
+  sed '$ s/,\s*$//'
 )
 
 # update luacheck config
-config="globals = { ${lua_globals} }"
-sed -i '/^globals\s*=\s*.*$/d' ${CONFIG_FILE}
-printf '%s\n' "${config}" >> ${CONFIG_FILE}
+config="globals = {
+${lua_globals}
+}"
+perl -0777pe 's/\n*globals\s*=\s*[^\\{}]*(?:\\.[\\{}]*)*(?<!\\)(\{(?>\\.|[^{}]|(?1))*})\n*/\n/g' ${CONFIG_FILE} \
+  > ${CONFIG_FILE}.tmp && mv ${CONFIG_FILE}.tmp ${CONFIG_FILE}
+printf '\n%s\n' "${config}" >> ${CONFIG_FILE}
