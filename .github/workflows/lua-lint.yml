@@ -24,11 +24,6 @@ on:
       - 'bugfix/**'
       - 'support/**'
       - 'update/**'
-    paths:
-      - 'script/**'
-      - '.luacheckrc'
-      - '.vscode/**'
-      - '.github/workflows/**'
   workflow_dispatch:
 
 env:
