@@ -47,10 +47,29 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v2
 
+    - id: date
+      run: |
+        echo "::set-output name=day::$(date '+%d')"
+        echo "::set-output name=month::$(date '+%m')"
+        echo "::set-output name=year::$(date '+%Y')"
+
+    - name: Cache apt sources lists
+      id: apt-cache
+      uses: actions/cache@v2
+      with:
+        key: ${{ runner.os }}-apt-cache-${{ format(
+          '{0}-{1}-{2}',
+          steps.date.outputs.year,
+          steps.date.outputs.month,
+          steps.date.outputs.day) }}
+        path: |
+          /var/cache/apt/archives
+
+    - if: steps.apt-cache.outputs.cache-hit != 'true'
+      run: sudo apt-get update
 
     - name: Install dos2unix
       run: |
-        sudo apt-get update
         sudo apt-get install -y dos2unix
 
     - name: Normalize LF/CRLF
