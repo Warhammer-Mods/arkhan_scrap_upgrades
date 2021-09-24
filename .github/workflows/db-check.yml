@@ -12,6 +12,8 @@ on:
       - 'update/**'
     paths:
       - 'db/**'
+      - '.github/workflows/**'
+      - '.vscode/**'
   pull_request:
     branches:
       - main
@@ -23,6 +25,8 @@ on:
       - 'update/**'
     paths:
       - 'db/**'
+      - '.github/workflows/**'
+      - '.vscode/**'
   workflow_dispatch:
 
 env:
