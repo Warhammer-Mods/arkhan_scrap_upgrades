@@ -1,0 +1,27 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "csval",
+      "pattern": [
+        {
+          "regexp": "^\\s*(?>File:)\\s*([^\\s].*)$",
+          "file": 1
+        },
+        {
+          "regexp": "^\\s*(Error):.*$",
+          "severity": "error"
+        },
+        {
+          "regexp": "^\\s*(Warning):.*$",
+          "severity": "warning"
+        },
+        {
+          "regexp": "^\\s+(?>-\\s*Row\\s+(\\d+):)\\s*(.*)$",
+          "line": 1,
+          "message": 2,
+          "loop": true
+        }
+      ]
+    }
+  ]
+}
