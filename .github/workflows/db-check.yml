@@ -77,9 +77,13 @@ jobs:
             csval "${file}"
           done
         }
+
         for path in ${FILES_TO_CHECK}; do
           if [[ -d ${path} ]]; then
-            find ${path} -type f -iname "*.tsv" -exec checkTSV {} \;
+            find ${path} -type f -iname "*.tsv" | 
+              while read file; do
+                checkTSV "$file"
+              done
           elif [[ -f ${path} ]]; then
             checkTSV ${path}
           fi
