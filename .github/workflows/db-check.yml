@@ -46,8 +46,8 @@ jobs:
 
     - name: Install dos2unix
       run: |
-        apt update
-        apt install -y dos2unix
+        sudo apt-get update
+        sudo apt-get install -y dos2unix
 
     - name: Normalize LF/CRLF
       run: |
