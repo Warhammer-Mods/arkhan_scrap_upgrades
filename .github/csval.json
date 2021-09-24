@@ -8,12 +8,8 @@
           "file": 1
         },
         {
-          "regexp": "^\\s*(Error):.*$",
-          "severity": "error"
-        },
-        {
-          "regexp": "^\\s*(Warning):.*$",
-          "severity": "warning"
+          "regexp": "^\\s*(Error|Warning):.*$",
+          "severity": 1
         },
         {
           "regexp": "^\\s+(?>-\\s*Row\\s+(\\d+):)\\s*(.*)$",
