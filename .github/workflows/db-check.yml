@@ -71,7 +71,7 @@ jobs:
 
     - name: Check TSV syntax
       run: |
-        checkTSV() {
+        checkTSV () {
           for file in $@; do
             echo "File: ${file}"
             csval "${file}"
@@ -79,9 +79,9 @@ jobs:
         }
         for path in ${FILES_TO_CHECK}; do
           if [[ -d ${path} ]]; then
-            find ${path} -type f -iname "*.tsv" -exec checkTSV({}) \;
+            find ${path} -type f -iname "*.tsv" -exec checkTSV {} \;
           elif [[ -f ${path} ]]; then
-            checkTSV("${path}")
+            checkTSV ${path}
           fi
         done 
 
