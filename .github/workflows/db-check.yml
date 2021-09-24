@@ -70,12 +70,19 @@ jobs:
     - run: npm install --global csval@${CSVAL_VERSION}
 
     - name: Check TSV syntax
+      id: check_syntax
       shell: bash --noprofile --norc {0}
       run: |
+        checkTSV_failed="false"
         checkTSV () {
           for file in $@; do
             echo "File: ${file}"
             csval "${file}"
+            exitstatus=$?
+
+            [[ ${exitstatus} -gt 0 ]] \
+            && echo "::set-output name=failed::true" \
+            && failed=true
           done
         }
 
@@ -90,7 +97,9 @@ jobs:
             checkTSV ${path}
           fi
         done 
-        echo "::remove-matcher owner=csval_error::"
+        echo "::remove-matcher owner=csval_problem::"
+        
+        [[ ${failed} == "true" ]] && exit 1
 
     - name: Get file changes
       id: changes
