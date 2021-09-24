@@ -1,15 +1,16 @@
 {
   "problemMatcher": [
     {
-      "owner": "csval",
+      "owner": "csval_error",
+      "severity": "error",
       "pattern": [
         {
           "regexp": "^\\s*(?>File:)\\s*([^\\s].*)$",
           "file": 1
         },
         {
-          "regexp": "^\\s*(Error|Warning):.*$",
-          "severity": 1
+          "regexp": "^\\s*(Error):(.*):$",
+          "code": 2
         },
         {
           "regexp": "^\\s+(?>-\\s*Row\\s+(\\d+):)\\s*(.*)$",

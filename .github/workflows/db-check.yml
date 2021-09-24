@@ -90,7 +90,7 @@ jobs:
             checkTSV ${path}
           fi
         done 
-        echo "::remove-matcher owner=csval::"
+        echo "::remove-matcher owner=csval_error::"
 
     - name: Get file changes
       id: changes
