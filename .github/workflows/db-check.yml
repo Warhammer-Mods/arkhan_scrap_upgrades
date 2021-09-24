@@ -70,6 +70,7 @@ jobs:
     - run: npm install --global csval@${CSVAL_VERSION}
 
     - name: Check TSV syntax
+      shell: bash --noprofile --norc {0}
       run: |
         checkTSV () {
           for file in $@; do
@@ -78,6 +79,7 @@ jobs:
           done
         }
 
+        echo "::add-matcher::.github/csval.json"
         for path in ${FILES_TO_CHECK}; do
           if [[ -d ${path} ]]; then
             find ${path} -type f -iname "*.tsv" | 
@@ -88,6 +90,7 @@ jobs:
             checkTSV ${path}
           fi
         done 
+        echo "::remove-matcher owner=csval::"
 
     - name: Get file changes
       id: changes
