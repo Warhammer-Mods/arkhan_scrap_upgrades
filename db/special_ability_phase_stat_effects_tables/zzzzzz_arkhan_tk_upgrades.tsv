@@ -1,5 +1,5 @@
-special_ability_phase_stat_effects_tables	3
 phase	value	stat	how
+#special_ability_phase_stat_effects_tables	3	db/special_ability_phase_stat_effects_tables/zzzzzz_arkhan_tk_upgrades
 followers_of_nagash_contact_effect_desecration	0.75	stat_melee_damage_ap	mult
 followers_of_nagash_contact_effect_desecration	0.75	stat_melee_damage_base	mult
 followers_of_nagash_contact_effect_desecration	-15.0	stat_armour	add
