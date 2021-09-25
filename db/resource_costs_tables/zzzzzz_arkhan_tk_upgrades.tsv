@@ -1,5 +1,5 @@
-resource_costs_tables	2
 id	treasury_cost	expenditure_type	income_type
+#resource_costs_tables	2	db/resource_costs_tables/zzzzzz_arkhan_tk_upgrades
 tmb_balefire_magics_khalida_unique	0	RITUAL	RITUAL
 tmb_balefire_magics_settra_unique	0	RITUAL	RITUAL
 tmb_balefire_magics_arkhan_unique	0	RITUAL	RITUAL

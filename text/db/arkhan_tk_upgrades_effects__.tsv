@@ -1,5 +1,5 @@
-Loc PackedFile	1
 key	text	tooltip
+#Loc PackedFile	1	text/db/arkhan_tk_upgrades_effects__.loc
 effects_description_tmb_balefire_magics_catapult_rapid_enable	Ability "Barrage of Skulls" for Screaming Skull Catapult units	true
 effects_description_tmb_balefire_magics_catapult_splash_enable	Ability "Balefire Malestrom" for Screaming Skull Catapult units	true
 effects_description_tmb_balefire_magics_casket_projectiles_enable	"Overwhelming" Ammunition (homing projectiles) for Casket of Soul units	true

@@ -1,5 +1,5 @@
-effects_tables	3
 effect	icon	priority	icon_negative	category	is_positive_value_good
+#effects_tables	3	db/effects_tables/zzzzz_arkhan_tk_upgrades_abilities
 tmb_balefire_magics_cav_devastating_charge_enable	general_ability.png	1	general_ability.png	battle	true
 tmb_balefire_magics_archer_hail_of_arrows_enable	ammo_character.png	1	ammo_character.png	battle	true
 tmb_balefire_magics_archer_hail_of_arrows_ror_enable	ammo_character.png	0	ammo_character.png	battle	true
