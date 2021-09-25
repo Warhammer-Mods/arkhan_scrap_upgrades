@@ -1,5 +1,5 @@
-effects_tables	3
 effect	icon	priority	icon_negative	category	is_positive_value_good
+#effects_tables	3	db/effects_tables/zzzzzz_arkhan_tk_upgrades_contacts
 tmb_balefire_magics_desecration_enable	general_ability.png	30	general_ability.png	battle	true
 tmb_balefire_magics_incantation_enable	general_ability.png	30	general_ability.png	battle	true
 tmb_balefire_magics_legions_enable	general_ability.png	30	general_ability.png	battle	true

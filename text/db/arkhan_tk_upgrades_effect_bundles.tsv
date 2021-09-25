@@ -1,5 +1,5 @@
-Loc PackedFile	1
 key	text	tooltip
+#Loc PackedFile	1	text/db/arkhan_tk_upgrades_effect_bundles.loc
 effect_bundles_localised_title_tmb_balefire_magics_screaming_skull_tier_1	Screaming Skulls	true
 effect_bundles_localised_description_tmb_balefire_magics_screaming_skull_tier_1	The Liche Priests cast terrible curses upon every one of these skulls, enchanting them so that they scream hideously as they are hurled through the air, rising to a deafening crescendo just before they strike their target.	true
 effect_bundles_localised_title_tmb_balefire_magics_screaming_skull_tier_2	Exploding Skulls	true

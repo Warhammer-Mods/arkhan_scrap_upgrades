@@ -1,5 +1,5 @@
-effects_tables	3
 effect	icon	priority	icon_negative	category	is_positive_value_good
+#effects_tables	3	db/effects_tables/zzzzzz_arkhan_tk_upgrades_artillery
 tmb_balefire_magics_catapult_rapid_enable	ammo_character.png	30	ammo_character.png	battle	true
 tmb_balefire_magics_catapult_splash_enable	ammo_character.png	30	ammo_character.png	battle	true
 tmb_balefire_magics_casket_projectiles_enable	ammo_character.png	30	ammo_character.png	battle	true

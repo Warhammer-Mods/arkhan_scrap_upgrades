@@ -1,5 +1,5 @@
-unit_purchasable_effects_categories_tables	0
 key	icon_path
+#unit_purchasable_effects_categories_tables	0	db/unit_purchasable_effects_categories_tables/zzzzzz_arkhan_tk_upgrades
 tk_arkhan_unique	icon_arkhan_nagash.png
 tk_khatep_unique	icon_khatep.png
 tk_settra_unique	icon_settra.png

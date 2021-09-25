@@ -1,5 +1,5 @@
-Loc PackedFile	1
 key	text	tooltip
+#Loc PackedFile	1	text/db/arkhan_tk_upgrades_unit_abilities__.loc
 unit_abilities_onscreen_name_followers_of_nagash_passive_effect_desecration	Rituals of Desecration	true
 unit_abilities_tooltip_text_followers_of_nagash_passive_effect_desecration	Only death and destruction awaits.	true
 unit_abilities_onscreen_name_exiles_of_nehek_passive_effect_incantation	Incantation of Souls	true

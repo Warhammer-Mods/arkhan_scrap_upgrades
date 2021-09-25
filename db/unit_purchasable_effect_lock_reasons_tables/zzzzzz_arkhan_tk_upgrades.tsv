@@ -1,5 +1,5 @@
-unit_purchasable_effect_lock_reasons_tables	0
 key
+#unit_purchasable_effect_lock_reasons_tables	0	db/unit_purchasable_effect_lock_reasons_tables/zzzzzz_arkhan_tk_upgrades
 tmb_balefire_magics_khalida_unique
 tmb_balefire_magics_settra_unique
 tmb_balefire_magics_arkhan_unique

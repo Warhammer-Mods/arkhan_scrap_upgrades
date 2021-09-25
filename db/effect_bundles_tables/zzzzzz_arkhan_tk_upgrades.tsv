@@ -1,5 +1,5 @@
-effect_bundles_tables	3
 key	localised_title	localised_description	ui_icon	bundle_target	priority	is_global_effect
+#effect_bundles_tables	3	db/effect_bundles_tables/zzzzzz_arkhan_tk_upgrades
 tmb_balefire_magics_khalida_unique	Arrows of Asaph			faction	1	true
 tmb_balefire_magics_settra_unique				faction	1	true
 tmb_balefire_magics_arkhan_unique				faction	1	true
