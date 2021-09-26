@@ -176,6 +176,10 @@ jobs:
         delete-branch: true
         signoff: false
         title: "[Luacheck] Update config and autocomplete"
+        body: |
+          **Update**:
+            - Total War Lua autocompletion
+            - Luacheck globals list
         labels: |
           automation
           dep
