@@ -30,6 +30,6 @@ jobs:
     with:
       paths: script
       pr_enabled: true
-      automerge_enabled: true
+      automerge_enabled: false # Disabled for the develop branch
     secrets:
       token: ${{ secrets.BOT_TOKEN }}
